@@ -51,12 +51,30 @@ gameScreenNode.style.display = "flex"
     //console.log("game running at 60fps")remove after its working
     //all movements
     // all colision checks
+    playerObj.gravity()
+
+
+
  }
   
 
 
 //* EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
+
+/* jump on click game box 
+gameBoxNode.addEventListener("click", () => {
+    playerObj.jump()
+})
+*/
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "w") {
+       playerObj.jump() 
+    }
+    
+})
+
 
 
 

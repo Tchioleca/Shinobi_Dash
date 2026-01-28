@@ -6,8 +6,13 @@ class Player {
     this.node.src = "./Assets/images/Player/player.png"
 
     gameBoxNode.append(this.node)
-
     this.x = 0   //less = left / more = right
+    this.y = 0 //more = lower / less = higher
+    this.width = 90
+    this.height = 90
+
+
+    /* original possition where i want it : this.x = 0   //less = left / more = right
     this.y = 330 //more = lower / less = higher
     this.width = 90
     this.height = 90
@@ -26,10 +31,31 @@ class Player {
     this.node.style.left = `${this.x}px`
     this.node.style.width = `${this.width}px`
     this.node.style.height = `${this.height}px`
+    
+    this.gravitySpeed = 3.6
+    this.jumpSpeed = 230
 
 
 }
 // methods  here 
+gravity() {
+    if (this.y < 330){
+    this.y += this.gravitySpeed
+    //changes in the position or dimension values of objects should be updated on DOM
+    this.node.style.top = `${this.y}px`
+    }
+
+
+}
+
+jump() {
+     this.y -= this.jumpSpeed
+    //changes in the position or dimension values of objects should be updated on DOM
+    this.node.style.top = `${this.y}px`
+}
+
+
+
 
 }
 
