@@ -1,6 +1,6 @@
-/*refactor this code
 
-/*class Obstacle {
+
+/class Obstacle {
 
   constructor(posY, type) {
     // let posY = 200

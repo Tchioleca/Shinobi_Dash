@@ -1,5 +1,5 @@
-/*refactor this code
-/* GLOBAL DOM ELEMENTS
+
+// GLOBAL DOM ELEMENTS
 
 // screens
 const startScreenNode = document.querySelector("#start-screen")
@@ -45,11 +45,11 @@ function gameLoop() {
   // console.log("game running at 60fps")
   // all automated movements and all collision checks
   
-  birdObj.gravity()
+  /*birdObj.gravity()
   // obstacleObj.automaticMovement()
   obstacleArr.forEach((eachObstacleObj) => {
     eachObstacleObj.automaticMovement()
-  })
+  })*/
 
   obstacleDespawnCheck()
   collisionBirdObstacles()
@@ -111,11 +111,11 @@ function checkCollision(obj1, obj2) {
     );
 }
 
-function collisionBirdFloor() {
+/*function collisionBirdFloor() {
   if ((birdObj.y + birdObj.height) > gameBoxNode.offsetHeight) {
     gameOver()
   }
-}
+}    removeed for now*/
 
 function gameOver() {
   //1. stop ALL intervals

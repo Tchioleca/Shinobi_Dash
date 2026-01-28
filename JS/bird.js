@@ -1,5 +1,3 @@
-
-/*refactor this code
 class Bird {
 
   constructor() {
@@ -26,12 +24,12 @@ class Bird {
   }
 
   // this is where the methods will be added
-  gravity() {
+  /*gravity() {
     this.y += this.gravitySpeed
     //! EVERYTIME you change a position or dimension value of the object, we need to adjust the DOM
     this.node.style.top = `${this.y}px`
   }
-
+*/
   jump() {
     if (this.y > 0) {
       this.y -= this.jumpSpeed
