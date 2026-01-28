@@ -62,11 +62,10 @@ gameScreenNode.style.display = "flex"
 //* EVENT LISTENERS
 startBtnNode.addEventListener("click", startGame)
 
-/* jump on click game box 
 gameBoxNode.addEventListener("click", () => {
     playerObj.jump()
 })
-*/
+
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "w") {
