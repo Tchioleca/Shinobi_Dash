@@ -19,8 +19,8 @@ const gameBoxNode = document.querySelector("#game-box")
 
 
 //* GLOBAL GAME VARIABLES
-
-
+let playerObj = null
+let tileObj = null
 
 //* GLOBAL GAME FUNCTIONS
 
@@ -32,8 +32,8 @@ function startGame() {
 startScreenNode.style.display = "none"
 gameScreenNode.style.display = "flex" 
     // 2 add initial elements
-    const tileObj = new tile()
-    const playerObj = new Player()
+     tileObj = new tile()
+     playerObj = new Player()
     
     console.log(playerObj)
     console.log(tileObj)

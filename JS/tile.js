@@ -3,7 +3,7 @@ class tile {
     constructor(){
 // properties here (the node is what we are seeing on the screen )
     this.node = document.createElement("img")
-    this.node.src = "/Assets/images/tile/FloorTile.png"
+    this.node.src = "./Assets/images/tile/FloorTile.png"
 
     gameBoxNode.append(this.node)
 
