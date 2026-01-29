@@ -12,7 +12,8 @@ class Player {
     this.height = 90
 
 
-    /* original possition where i want it : this.x = 0   //less = left / more = right
+    /* original possition where i want it : this.x = 0   //
+    less = left / more = right
     this.y = 330 //more = lower / less = higher
     this.width = 90
     this.height = 90
@@ -59,3 +60,6 @@ jump() {
 
 }
 
+//game box sizes:
+// width:900px;
+// height:500px;
