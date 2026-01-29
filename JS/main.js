@@ -55,6 +55,7 @@ gameScreenNode.style.display = "flex"
     //all movements
     // all colision checks
     playerObj.gravity()
+    enemyObj.automaticMovement()
 
 
 
