@@ -1,6 +1,11 @@
 body {
   margin: 0;
   background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
 }
 
 #start-btn {
@@ -8,7 +13,7 @@ body {
   color: white;
   padding: 20px;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 100px;
   border-radius: 10px; 
 }
 
@@ -17,7 +22,7 @@ body {
   color: white;
   padding: 20px;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 100px;
   border-radius: 10px; 
 }
 
@@ -26,8 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
-  margin-top: 80px;
+
 }
 
 #game-box {
@@ -37,8 +41,8 @@ body {
   
 
   position: relative; /* allows us to position inner elements (absolute) related the the game-box */
-  /*overflow: hidden; /* prevents elements to visually exit the game-box 
-  user-select: none; /* prevents elements inside the game-box to be highlighted. This improves the user experience for click events on the game-box */
+  overflow: hidden; 
+  user-select: none;
 
   background-image: url("../Assets/images/Background/RainVilageBkgd.png");
   background-size: contain;
@@ -46,42 +50,39 @@ body {
 }
 
 #game-box * {
-  pointer-events: none; /* prevents elements in the game-box to be dragged. This improves the user experience for click events on the game-box  */
+  pointer-events: none; 
 }
+
+
+#game-over-screen {
+  position: relative; 
+  overflow: hidden; 
+  user-select: none; 
+  background-image: url("../Assets/images/gameover/gameover.jpg");
+  background-size: contain;
+
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+#game-over-screen{
+  position: relative; 
+  overflow: hidden; 
+  user-select: none; 
+  background-image: url("../Assets/images/gameover/gameover.jpg");
+  background-size: contain;
+}
+
+
 
 #game-screen, #game-over-screen {
   display: none;
   
 }
-#game-screen{
-  background-color: darkgray;
-  width:900px;
-  height:500px;
-  
 
-  position: relative; /* allows us to position inner elements (absolute) related the the game-box */
-  /*overflow: hidden; /* prevents elements to visually exit the game-box 
-  user-select: none; /* prevents elements inside the game-box to be highlighted. This improves the user experience for click events on the game-box */
-
-  background-image: url("..");
-  background-size: contain;
-}
-
-
-
-
-
-
-#game-over-screen{
-  background-color: rgb(219, 15, 15);
-  width:900px;
-  height:500px;
-  
-
-  position: relative; /* allows us to position inner elements (absolute) related the the game-box */
-  /*overflow: hidden; /* prevents elements to visually exit the game-box 
-  user-select: none; /* prevents elements inside the game-box to be highlighted. This improves the user experience for click events on the game-box */
-
-  background-image: url("../Assets/images/gameover/gameover.jpg");
-  background-size: contain;
+#start-screen, #game-screen,#game-over-screen {
+  width: 900px;
+  height: 500px;
 }

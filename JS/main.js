@@ -29,12 +29,14 @@ const startBtnNode = document.querySelector("#start-btn");
 const gameBoxNode = document.querySelector("#game-box");
 
 //* GLOBAL GAME VARIABLES
-//let tileObj = null; null  onlly one tile no movement (cheating paralax)
-//let enemyObj = null;  onlly one
 
-let playerObj = null;
-let enemyArr = [];
+
+
 let tileArr = [];
+let enemyArr = [];
+let playerObj = null;
+// again draw order matthers : player on top of enemies on top of tiles
+
 let gameIntervalId = null
 let enemySpawnIntervalId = null
 let tileIntervalId = null
@@ -53,17 +55,15 @@ function startGame() {
 
   // 2 add initial game  elements
 
-  //tileObj = new tile();
-  //enemyObj = new Enemy()
   playerObj = new Player();
 
   console.log(playerObj);
-  //console.log(tileObj);
-  //console.log(enemyObj);
+ 
 
   // 3 start game loop
   gameIntervalId = setInterval(gameLoop, Math.round(1000 / 60)); // 60fps (dont change this)
   enemySpawnIntervalId = setInterval(enemySpawn, 5500); // tweek untill no overlap!(5000+ seems safe)
+
   // 4 start all intervals that are needed
 
   tileIntervalId = setInterval(tileSpawn, 500); // tweek latter now its uggly... but works
@@ -193,25 +193,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-//* planning session
+document.getElementById("replay-btn").addEventListener("click", () => {
+  location.reload();
+});
 
-//1
-// player object(x, y, w, h)
-//properties of player
-//player movement up down left right ()
-
-//2
-//terrain  object (x, y, w, h) (were the player is)
-//terrain spwan
-//  move rigth to left x decrease
-//terrain deletion on reaching left
-//platform where the player is
-
-//3
-//enemy    (x, y, w, h)
-//enemy random spawn
-
-//4 logic
-// collision logic for player hit
-
-// logs to see if things are here or not :
