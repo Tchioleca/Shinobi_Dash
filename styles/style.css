@@ -12,19 +12,29 @@ body {
   border-radius: 10px; 
 }
 
+#replay-btn {
+  background-color: rgb(255, 30, 1);
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 40px;
+  border-radius: 10px; 
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 50px;
+  margin-top: 80px;
 }
 
 #game-box {
   background-color: darkgray;
   width:900px;
   height:500px;
-  margin-top: 80px;
+  
 
   position: relative; /* allows us to position inner elements (absolute) related the the game-box */
   /*overflow: hidden; /* prevents elements to visually exit the game-box 
@@ -42,4 +52,36 @@ body {
 #game-screen, #game-over-screen {
   display: none;
   
+}
+#game-screen{
+  background-color: darkgray;
+  width:900px;
+  height:500px;
+  
+
+  position: relative; /* allows us to position inner elements (absolute) related the the game-box */
+  /*overflow: hidden; /* prevents elements to visually exit the game-box 
+  user-select: none; /* prevents elements inside the game-box to be highlighted. This improves the user experience for click events on the game-box */
+
+  background-image: url("..");
+  background-size: contain;
+}
+
+
+
+
+
+
+#game-over-screen{
+  background-color: rgb(219, 15, 15);
+  width:900px;
+  height:500px;
+  
+
+  position: relative; /* allows us to position inner elements (absolute) related the the game-box */
+  /*overflow: hidden; /* prevents elements to visually exit the game-box 
+  user-select: none; /* prevents elements inside the game-box to be highlighted. This improves the user experience for click events on the game-box */
+
+  background-image: url("../Assets/images/gameover/gameover.jpg");
+  background-size: contain;
 }

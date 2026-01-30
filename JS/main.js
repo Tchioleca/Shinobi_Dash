@@ -6,6 +6,12 @@ const backgroundMusic = new Audio(
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.2; // 0.0 to 1.0
 
+const endmusic = new Audio(
+  "/Assets/Sound/2026-01-27 12-43-08 shinobi dash end game music.wav",
+);
+endmusic.loop = true;
+endmusic.volume = 0.2; // 0.0 to 1.0
+
 // GLOBAL DOM ELEMENTS
 
 // screens
@@ -161,6 +167,8 @@ function gameOver(){
   //2. then go to last:
   gameScreenNode.style.display = "none"
   gameOverScreenNode.style.display ="flex"
+  endmusic.currentTime = 0;
+  endmusic.play();
 
 }
 
