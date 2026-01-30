@@ -30,8 +30,8 @@ class Player {
     this.node.style.width = `${this.width}px`;
     this.node.style.height = `${this.height}px`;
 
-    this.gravitySpeed = 2.5;
-    this.jumpSpeed = 450; // 230 original value
+    this.gravitySpeed = 2.7;
+    this.jumpSpeed = 440; // 230 original value
     //this.diveDownSpeed = 500; reversed
     this.isOnGround = false; // should be false because this is for spawn and respawn so the player is on the air on spwan (changing this to true or false does nothing the states are being updated elsewere ?)
   }
