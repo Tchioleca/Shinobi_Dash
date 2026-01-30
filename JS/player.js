@@ -5,7 +5,7 @@ class Player {
     this.node.src = "./Assets/images/Player/player.png";
 
     gameBoxNode.append(this.node);
-    this.x = 0; //less = left / more = right
+    this.x = 350; //less = left / more = right
     this.y = 0; //more = lower / less = higher
     this.width = 90;
     this.height = 90;
@@ -30,10 +30,10 @@ class Player {
     this.node.style.width = `${this.width}px`;
     this.node.style.height = `${this.height}px`;
 
-    this.gravitySpeed = 3.6;
-    this.jumpSpeed = 230; // 230 original value 
-    this.isOnGround = true; // should be false because this is for spawn and respawn
-    
+    this.gravitySpeed = 3.4;
+    this.jumpSpeed = 350; // 230 original value
+    //this.diveDownSpeed = 500; reversed
+    this.isOnGround = false; // should be false because this is for spawn and respawn so the player is on the air on spwan (changing this to true or false does nothing the states are being updated elsewere ?)
   }
   // methods  here
   gravity() {
@@ -42,7 +42,7 @@ class Player {
       this.node.style.top = `${this.y}px`;
     } else {
       this.isOnGround = true;
-    } //check if is on ground or not then update the value of true or false in the player ()
+    } //check if is on ground or not then update the value of true or false in the player (this is also creating the floor effect)
   }
 
   jump() {
@@ -52,6 +52,13 @@ class Player {
 
       this.node.style.top = `${this.y}px`;
       // now does not allow double jumps
+    }
+  }
+
+  dive() {
+    if (this.y < 330) {
+      this.y = 335 ;
+      this.node.style.top = `${this.y}px`;
     }
   }
 }

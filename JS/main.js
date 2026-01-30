@@ -25,10 +25,10 @@ const gameBoxNode = document.querySelector("#game-box");
 //* GLOBAL GAME VARIABLES
 
 let playerObj = null;
-let tileObj = null;
+//let tileObj = null; null  onlly one tile no movement (cheating paralax)
 //let enemyObj = null  onlly one
 let enemyArr = [];
-
+let tileArr = [];
 //* GLOBAL GAME FUNCTIONS
 
 function startGame() {
@@ -41,12 +41,12 @@ function startGame() {
   gameScreenNode.style.display = "flex";
 
   // 2 add initial game  elements
-  tileObj = new tile();
+   //tileObj = new tile();
   playerObj = new Player();
   //enemyObj = new Enemy()
 
   console.log(playerObj);
-  console.log(tileObj);
+   //console.log(tileObj);
   //console.log(enemyObj);
 
   // 3 start game loop
@@ -64,28 +64,63 @@ function gameLoop() {
   enemyArr.forEach((eachEnemyObj) => {
     eachEnemyObj.automaticMovement()
   })
+
+  tileArr.forEach((eachTileObj) => {
+    eachTileObj.paralaxMovement()
+  })
 }
 
 function enemySpawn() {
-  let enemy1 = new Enemy()
+  let enemy1 = new Enemy(7.5,"fast",100)//add aditional argument to be a flying ting 
   enemyArr.push(enemy1)
   console.log(enemyArr)
+
+  let enemy2 = new Enemy(2.5,"slow",330)// slow movement add sparinggly 
+  enemyArr.push(enemy2)
+  console.log(enemyArr)
+
+  let enemy3 = new Enemy(4.5,"medium",330) // each X secons main enemy 
+  enemyArr.push(enemy3)
+  console.log(enemyArr)
+
+
+}
+
+function tileSpawn (){
+  let floor = new Tile()
+  tileArr.push(floor)
+  console.log(tileArr)
 }
 
 //* EVENT LISTENERS
 
 
 startBtnNode.addEventListener("click", startGame);
-
+/*
 gameBoxNode.addEventListener("click", () => {
   playerObj.jump();
 });
+*/
+
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "w") {
     playerObj.jump();
   }
 });
+
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "s") {
+    playerObj.dive();
+  }
+});
+
+
+ 
+
+
+
 
 //* planning session
 
