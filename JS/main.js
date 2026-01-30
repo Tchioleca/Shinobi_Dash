@@ -115,10 +115,21 @@ function tileSpawn () {
 
 function enemyDespawnCheck(){
 
-  console.log(enemyArr[0].x)///still gives error because of timer spawn, same will happen to the tiles
+  console.log(enemyArr[0].x)///still gives error because of timer spawn, same will happen to the tiles(stops at 324 erros)
 
-  if (enemyArr[0] && enemyArr[0].x <= 0) {
+  if (enemyArr[0] && enemyArr[0].x <= -100) {
+    enemyArr[0].node.remove()
+    enemyArr.shift()
+  }
+}
 
+function tileDespawnCheck(){
+
+  console.log(tileArr[0].x)///still gives error because of timer spawn, same will happen to the tiles(stops at 324 erros)
+
+  if (tileArr[0] && tileArr[0].x <= -900) {
+    tileArr[0].node.remove()
+    tileArr.shift()
   }
 }
 
