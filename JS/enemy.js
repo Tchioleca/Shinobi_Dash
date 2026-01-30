@@ -1,6 +1,7 @@
 class Enemy {
   constructor(runSpeed, type, posY) {
     // properties here (the node is what we are seeing on the screen )
+    this.type = type // to acess the type later
     this.node = document.createElement("img");
     if (type === "medium") {
       this.node.src = "./Assets/images/Enemy/Enemy1.png";

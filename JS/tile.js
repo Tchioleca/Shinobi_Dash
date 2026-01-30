@@ -6,10 +6,10 @@ class Tile {
 
     gameBoxNode.append(this.node);
 
-    this.x = 800;
+    this.x = 200;
     this.y = 400;
-    this.width = 90;
-    this.height = 90;
+    this.width = 900;
+    this.height = 150;
 
     /* player starting possition :
     this.x = 0
@@ -23,7 +23,7 @@ class Tile {
     this.node.style.left = `${this.x}px`;
     this.node.style.width = `${this.width}px`;
     this.node.style.height = `${this.height}px`;
-    this.speed = 2; //hardcoded needs to be slow 
+    this.speed = 8.5; //hardcoded needs to be slow 
   }
   // methods  here
   paralaxMovement() {

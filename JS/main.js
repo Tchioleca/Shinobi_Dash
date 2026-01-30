@@ -23,12 +23,16 @@ const startBtnNode = document.querySelector("#start-btn");
 const gameBoxNode = document.querySelector("#game-box");
 
 //* GLOBAL GAME VARIABLES
+//let tileObj = null; null  onlly one tile no movement (cheating paralax)
+//let enemyObj = null;  onlly one
+
+
 
 let playerObj = null;
-//let tileObj = null; null  onlly one tile no movement (cheating paralax)
-//let enemyObj = null  onlly one
 let enemyArr = [];
 let tileArr = [];
+
+
 //* GLOBAL GAME FUNCTIONS
 
 function startGame() {
@@ -41,9 +45,11 @@ function startGame() {
   gameScreenNode.style.display = "flex";
 
   // 2 add initial game  elements
-   //tileObj = new tile();
-  playerObj = new Player();
+
+  //tileObj = new tile();
   //enemyObj = new Enemy()
+  playerObj = new Player();
+ 
 
   console.log(playerObj);
    //console.log(tileObj);
@@ -51,9 +57,10 @@ function startGame() {
 
   // 3 start game loop
   setInterval(gameLoop, Math.round(1000 / 60)); // 60fps (dont change this)
-
+setInterval(enemySpawn,5500)// tweek untill no overlap!(5000+ seems safe)
   // 4 start all intervals that are needed
-  setInterval(enemySpawn,3000)// every 2 sec one is added 
+  
+  setInterval(tileSpawn,500)// tweek latter now its uggly... but works  
 }
 function gameLoop() {
   //console.log("game running at 60fps")remove after its working
@@ -65,31 +72,54 @@ function gameLoop() {
     eachEnemyObj.automaticMovement()
   })
 
-  tileArr.forEach((eachTileObj) => {
+  tileArr.forEach((eachTileObj) =>{
     eachTileObj.paralaxMovement()
+
   })
+  enemyDespawnCheck()
+
 }
 
 function enemySpawn() {
-  let enemy1 = new Enemy(7.5,"fast",100)//add aditional argument to be a flying ting 
+
+  // ramdom speed betewwn ( for each  type is diff case diff)
+  function pickRandomS(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+  function pickRandomY(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+  
+  
+  let enemy1 = new Enemy(pickRandomS([11.0, 8.0, 7.5, 9.1,18, 7.2, 8.3, 7.4 ,7.55,4.5,3.8]),"fast",pickRandomY([100,950,120,150,111,123,125,146,132,124,]))//verry uglly code :(
   enemyArr.push(enemy1)
   console.log(enemyArr)
 
-  let enemy2 = new Enemy(2.5,"slow",330)// slow movement add sparinggly 
+ let enemy2 = new Enemy(pickRandomS([2.6, 2.8, 3.0]), "slow", 330)
+  // slow movement add sparinggly 
   enemyArr.push(enemy2)
   console.log(enemyArr)
 
-  let enemy3 = new Enemy(4.5,"medium",330) // each X secons main enemy 
+  let enemy3 = new Enemy(pickRandomS([3.6, 4.0, 3.5, 3.7]),"medium",330) // each X secons main enemy 
   enemyArr.push(enemy3)
   console.log(enemyArr)
 
 
 }
 
-function tileSpawn (){
-  let floor = new Tile()
-  tileArr.push(floor)
+function tileSpawn () {
+  let tile1 = new Tile()
+  tileArr.push(tile1)
   console.log(tileArr)
+}
+
+function enemyDespawnCheck(){
+
+  console.log(enemyArr[0].x)///still gives error because of timer spawn, same will happen to the tiles
+
+  if (enemyArr[0] && enemyArr[0].x <= 0) {
+
+  }
 }
 
 //* EVENT LISTENERS
