@@ -7,7 +7,7 @@ backgroundMusic.loop = true;
 backgroundMusic.volume = 0.2; // 0.0 to 1.0
 
 const endmusic = new Audio(
-  "/Assets/Sound/2026-01-27 12-43-08 shinobi dash end game music.wav",
+  "/Assets/Sound/2026-01-27 12-46-28 shinobi dash end music.mp3",
 );
 endmusic.loop = true;
 endmusic.volume = 0.2; // 0.0 to 1.0

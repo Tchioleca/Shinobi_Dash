@@ -13,7 +13,7 @@ body {
   color: white;
   padding: 20px;
   font-size: 20px;
-  margin-top: 100px;
+  margin-top: 25px;
   border-radius: 10px; 
 }
 
@@ -65,15 +65,19 @@ body {
   background-repeat: no-repeat;
 }
 
-
-
-#game-over-screen{
+#start-screen {
   position: relative; 
   overflow: hidden; 
   user-select: none; 
-  background-image: url("../Assets/images/gameover/gameover.jpg");
+  background-image: url("..//Assets/images/startscreen/startscreen.png");
   background-size: contain;
+
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+
+
 
 
 
